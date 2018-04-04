@@ -1,0 +1,40 @@
+
+<div *ngIf="ugovorMaterijal">
+    <h2><span jhiTranslate="rasvetaApp.ugovorMaterijal.detail.title">Ugovor Materijal</span> {{ugovorMaterijal.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rasvetaApp.ugovorMaterijal.opis">Opis</span></dt>
+        <dd>
+            <span>{{ugovorMaterijal.opis}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.ugovorMaterijal.datumOd">Datum Od</span></dt>
+        <dd>
+            <span>{{ugovorMaterijal.datumOd | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.ugovorMaterijal.datumDo">Datum Do</span></dt>
+        <dd>
+            <span>{{ugovorMaterijal.datumDo | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.ugovorMaterijal.opstina">Opstina</span></dt>
+        <dd>
+            <div *ngIf="ugovorMaterijal.opstina">
+                <a [routerLink]="['/opstina', ugovorMaterijal.opstina?.id]">{{ugovorMaterijal.opstina?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'ugovor-materijal/'+ ugovorMaterijal.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

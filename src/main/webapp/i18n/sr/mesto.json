@@ -1,0 +1,23 @@
+
+{
+    "rasvetaApp": {
+        "mesto" : {
+            "home": {
+                "title": "Mestos",
+                "createLabel": "Kreiraj novi Mesto",
+                "createOrEditLabel": "Kreirajte ili izmenite Mesto"
+            },
+            "created": "Kreiran je novi Mesto pod nazivom {{ param }}",
+            "updated": "Mesto pod nazivom {{ param }} je ažuriran",
+            "deleted": "Mesto pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Mesto pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Mesto"
+            },
+            "naziv": "Naziv",
+            "opstina": "Opstina"
+        }
+    }
+}

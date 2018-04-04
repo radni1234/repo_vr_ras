@@ -1,0 +1,22 @@
+
+{
+    "rasvetaApp": {
+        "stubTip" : {
+            "home": {
+                "title": "Stub Tips",
+                "createLabel": "Kreiraj novi Stub Tip",
+                "createOrEditLabel": "Kreirajte ili izmenite Stub Tip"
+            },
+            "created": "Kreiran je novi Stub Tip pod nazivom {{ param }}",
+            "updated": "Stub Tip pod nazivom {{ param }} je ažuriran",
+            "deleted": "Stub Tip pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Stub Tip pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Stub Tip"
+            },
+            "naziv": "Naziv"
+        }
+    }
+}

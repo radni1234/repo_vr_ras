@@ -1,0 +1,32 @@
+
+<div *ngIf="mesto">
+    <h2><span jhiTranslate="rasvetaApp.mesto.detail.title">Mesto</span> {{mesto.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rasvetaApp.mesto.naziv">Naziv</span></dt>
+        <dd>
+            <span>{{mesto.naziv}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.mesto.opstina">Opstina</span></dt>
+        <dd>
+            <div *ngIf="mesto.opstina">
+                <a [routerLink]="['/opstina', mesto.opstina?.id]">{{mesto.opstina?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'mesto/'+ mesto.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

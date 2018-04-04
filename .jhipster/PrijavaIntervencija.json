@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "intervencijaTip",
+            "otherEntityName": "intervencijaTip",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "prijavaStatus",
+            "otherEntityName": "prijavaStatus",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "opis",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datum",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180402105604",
+    "entityTableName": "prijava_intervencija",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

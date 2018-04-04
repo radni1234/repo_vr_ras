@@ -1,0 +1,22 @@
+
+{
+    "rasvetaApp": {
+        "stubTip" : {
+            "home": {
+                "title": "Stub Tips",
+                "createLabel": "Create a new Stub Tip",
+                "createOrEditLabel": "Create or edit a Stub Tip"
+            },
+            "created": "A new Stub Tip is created with identifier {{ param }}",
+            "updated": "A Stub Tip is updated with identifier {{ param }}",
+            "deleted": "A Stub Tip is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Stub Tip {{ id }}?"
+            },
+            "detail": {
+                "title": "Stub Tip"
+            },
+            "naziv": "Naziv"
+        }
+    }
+}

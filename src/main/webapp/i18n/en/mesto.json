@@ -1,0 +1,23 @@
+
+{
+    "rasvetaApp": {
+        "mesto" : {
+            "home": {
+                "title": "Mestos",
+                "createLabel": "Create a new Mesto",
+                "createOrEditLabel": "Create or edit a Mesto"
+            },
+            "created": "A new Mesto is created with identifier {{ param }}",
+            "updated": "A Mesto is updated with identifier {{ param }}",
+            "deleted": "A Mesto is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mesto {{ id }}?"
+            },
+            "detail": {
+                "title": "Mesto"
+            },
+            "naziv": "Naziv",
+            "opstina": "Opstina"
+        }
+    }
+}

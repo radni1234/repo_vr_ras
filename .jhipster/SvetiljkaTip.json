@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "izvor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "snaga",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180402105552",
+    "entityTableName": "svetiljka_tip",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

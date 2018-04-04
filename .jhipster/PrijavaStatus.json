@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "prijava",
+            "otherEntityName": "prijava",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "status",
+            "otherEntityName": "status",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "opis",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datum",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "trajanje",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180402105603",
+    "entityTableName": "prijava_status",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

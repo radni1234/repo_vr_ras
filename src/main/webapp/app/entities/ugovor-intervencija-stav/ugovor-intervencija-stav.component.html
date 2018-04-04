@@ -1,0 +1,80 @@
+<div>
+    <h2>
+        <span jhiTranslate="rasvetaApp.ugovorIntervencijaStav.home.title">Ugovor Intervencija Stavs</span>
+        <button class="btn btn-primary float-right jh-create-entity create-ugovor-intervencija-stav" [routerLink]="['/', { outlets: { popup: ['ugovor-intervencija-stav-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="rasvetaApp.ugovorIntervencijaStav.home.createLabel">
+            Create new Ugovor Intervencija Stav
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="ugovorIntervencijaStavs">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="naziv"><span jhiTranslate="rasvetaApp.ugovorIntervencijaStav.naziv">Naziv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="cena"><span jhiTranslate="rasvetaApp.ugovorIntervencijaStav.cena">Cena</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ugovorIntervencija.id"><span jhiTranslate="rasvetaApp.ugovorIntervencijaStav.ugovorIntervencija">Ugovor Intervencija</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="jedMere.id"><span jhiTranslate="rasvetaApp.ugovorIntervencijaStav.jedMere">Jed Mere</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let ugovorIntervencijaStav of ugovorIntervencijaStavs ;trackBy: trackId">
+                <td><a [routerLink]="['../ugovor-intervencija-stav', ugovorIntervencijaStav.id ]">{{ugovorIntervencijaStav.id}}</a></td>
+                <td>{{ugovorIntervencijaStav.naziv}}</td>
+                <td>{{ugovorIntervencijaStav.cena}}</td>
+                <td>
+                    <div *ngIf="ugovorIntervencijaStav.ugovorIntervencija">
+                        <a [routerLink]="['../ugovor-intervencija', ugovorIntervencijaStav.ugovorIntervencija?.id ]" >{{ugovorIntervencijaStav.ugovorIntervencija?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="ugovorIntervencijaStav.jedMere">
+                        <a [routerLink]="['../jed-mere', ugovorIntervencijaStav.jedMere?.id ]" >{{ugovorIntervencijaStav.jedMere?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../ugovor-intervencija-stav', ugovorIntervencijaStav.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'ugovor-intervencija-stav/'+ ugovorIntervencijaStav.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'ugovor-intervencija-stav/'+ ugovorIntervencijaStav.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="ugovorIntervencijaStavs && ugovorIntervencijaStavs.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

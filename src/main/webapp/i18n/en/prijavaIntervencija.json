@@ -1,0 +1,25 @@
+
+{
+    "rasvetaApp": {
+        "prijavaIntervencija" : {
+            "home": {
+                "title": "Prijava Intervencijas",
+                "createLabel": "Create a new Prijava Intervencija",
+                "createOrEditLabel": "Create or edit a Prijava Intervencija"
+            },
+            "created": "A new Prijava Intervencija is created with identifier {{ param }}",
+            "updated": "A Prijava Intervencija is updated with identifier {{ param }}",
+            "deleted": "A Prijava Intervencija is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Prijava Intervencija {{ id }}?"
+            },
+            "detail": {
+                "title": "Prijava Intervencija"
+            },
+            "opis": "Opis",
+            "datum": "Datum",
+            "intervencijaTip": "Intervencija Tip",
+            "prijavaStatus": "Prijava Status"
+        }
+    }
+}

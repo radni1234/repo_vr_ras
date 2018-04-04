@@ -1,0 +1,38 @@
+
+<div *ngIf="svetiljka">
+    <h2><span jhiTranslate="rasvetaApp.svetiljka.detail.title">Svetiljka</span> {{svetiljka.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rasvetaApp.svetiljka.kom">Kom</span></dt>
+        <dd>
+            <span>{{svetiljka.kom}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.svetiljka.stub">Stub</span></dt>
+        <dd>
+            <div *ngIf="svetiljka.stub">
+                <a [routerLink]="['/stub', svetiljka.stub?.id]">{{svetiljka.stub?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.svetiljka.svetiljkaTip">Svetiljka Tip</span></dt>
+        <dd>
+            <div *ngIf="svetiljka.svetiljkaTip">
+                <a [routerLink]="['/svetiljka-tip', svetiljka.svetiljkaTip?.id]">{{svetiljka.svetiljkaTip?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'svetiljka/'+ svetiljka.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

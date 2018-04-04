@@ -1,0 +1,57 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myUgovorIntervencijaLabel" jhiTranslate="rasvetaApp.ugovorIntervencija.home.createOrEditLabel">Create or edit a Ugovor Intervencija</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!ugovorIntervencija.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="ugovorIntervencija.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.ugovorIntervencija.opis" for="field_opis">Opis</label>
+            <input type="text" class="form-control" name="opis" id="field_opis"
+                [(ngModel)]="ugovorIntervencija.opis" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.ugovorIntervencija.datumOd" for="field_datumOd">Datum Od</label>
+            <div class="input-group">
+                <input id="field_datumOd" type="text" class="form-control" name="datumOd" ngbDatepicker  #datumOdDp="ngbDatepicker" [(ngModel)]="ugovorIntervencija.datumOd"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="datumOdDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.ugovorIntervencija.datumDo" for="field_datumDo">Datum Do</label>
+            <div class="input-group">
+                <input id="field_datumDo" type="text" class="form-control" name="datumDo" ngbDatepicker  #datumDoDp="ngbDatepicker" [(ngModel)]="ugovorIntervencija.datumDo"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="datumDoDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.ugovorIntervencija.opstina" for="field_opstina">Opstina</label>
+            <select class="form-control" id="field_opstina" name="opstina" [(ngModel)]="ugovorIntervencija.opstina" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="opstinaOption.id === ugovorIntervencija.opstina?.id ? ugovorIntervencija.opstina : opstinaOption" *ngFor="let opstinaOption of opstinas; trackBy: trackOpstinaById">{{opstinaOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

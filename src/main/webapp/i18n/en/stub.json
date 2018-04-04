@@ -1,0 +1,29 @@
+
+{
+    "rasvetaApp": {
+        "stub" : {
+            "home": {
+                "title": "Stubs",
+                "createLabel": "Create a new Stub",
+                "createOrEditLabel": "Create or edit a Stub"
+            },
+            "created": "A new Stub is created with identifier {{ param }}",
+            "updated": "A Stub is updated with identifier {{ param }}",
+            "deleted": "A Stub is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Stub {{ id }}?"
+            },
+            "detail": {
+                "title": "Stub"
+            },
+            "adresa": "Adresa",
+            "lonD": "Lon D",
+            "latD": "Lat D",
+            "rbr": "Rbr",
+            "adresaSlike": "Adresa Slike",
+            "mesto": "Mesto",
+            "stubTip": "Stub Tip",
+            "status": "Status"
+        }
+    }
+}

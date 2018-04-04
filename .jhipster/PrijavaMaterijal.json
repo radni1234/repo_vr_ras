@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "materijalTip",
+            "otherEntityName": "materijalTip",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "prijavaIntervencija",
+            "otherEntityName": "prijavaIntervencija",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "kolicina",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "opis",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datum",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180402105605",
+    "entityTableName": "prijava_materijal",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

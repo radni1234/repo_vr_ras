@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Prijava.
+    -->
+    <changeSet id="20180402105602-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="stub_id"
+                                 baseTableName="prijava"
+                                 constraintName="fk_prijava_stub_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stub"/>
+
+    </changeSet>
+</databaseChangeLog>

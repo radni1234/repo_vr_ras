@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "ugovorMaterijal",
+            "otherEntityName": "ugovorMaterijal",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "jedMere",
+            "otherEntityName": "jedMere",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cena",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180402105559",
+    "entityTableName": "ugovor_materijal_stav",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

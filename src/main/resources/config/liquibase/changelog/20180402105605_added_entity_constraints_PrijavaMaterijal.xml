@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity PrijavaMaterijal.
+    -->
+    <changeSet id="20180402105605-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="materijal_tip_id"
+                                 baseTableName="prijava_materijal"
+                                 constraintName="fk_prijava_materijal_materijal_tip_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="materijal_tip"/>
+
+        <addForeignKeyConstraint baseColumnNames="prijava_intervencija_id"
+                                 baseTableName="prijava_materijal"
+                                 constraintName="fk_prijava_materijal_prijava_intervencija_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="prijava_intervencija"/>
+
+    </changeSet>
+</databaseChangeLog>

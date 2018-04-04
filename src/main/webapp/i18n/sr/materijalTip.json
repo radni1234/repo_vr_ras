@@ -1,0 +1,22 @@
+
+{
+    "rasvetaApp": {
+        "materijalTip" : {
+            "home": {
+                "title": "Materijal Tips",
+                "createLabel": "Kreiraj novi Materijal Tip",
+                "createOrEditLabel": "Kreirajte ili izmenite Materijal Tip"
+            },
+            "created": "Kreiran je novi Materijal Tip pod nazivom {{ param }}",
+            "updated": "Materijal Tip pod nazivom {{ param }} je ažuriran",
+            "deleted": "Materijal Tip pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Materijal Tip pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Materijal Tip"
+            },
+            "naziv": "Naziv"
+        }
+    }
+}

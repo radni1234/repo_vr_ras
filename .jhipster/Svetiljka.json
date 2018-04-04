@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stub",
+            "otherEntityName": "stub",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "svetiljkaTip",
+            "otherEntityName": "svetiljkaTip",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "kom",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180402105553",
+    "entityTableName": "svetiljka",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

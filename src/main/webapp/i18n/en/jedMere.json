@@ -1,0 +1,22 @@
+
+{
+    "rasvetaApp": {
+        "jedMere" : {
+            "home": {
+                "title": "Jed Meres",
+                "createLabel": "Create a new Jed Mere",
+                "createOrEditLabel": "Create or edit a Jed Mere"
+            },
+            "created": "A new Jed Mere is created with identifier {{ param }}",
+            "updated": "A Jed Mere is updated with identifier {{ param }}",
+            "deleted": "A Jed Mere is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Jed Mere {{ id }}?"
+            },
+            "detail": {
+                "title": "Jed Mere"
+            },
+            "naziv": "Naziv"
+        }
+    }
+}

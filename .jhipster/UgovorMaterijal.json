@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "opstina",
+            "otherEntityName": "opstina",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "opis",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datumOd",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "datumDo",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20180402105558",
+    "entityTableName": "ugovor_materijal",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

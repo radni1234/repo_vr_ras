@@ -1,0 +1,22 @@
+
+{
+    "rasvetaApp": {
+        "intervencijaTip" : {
+            "home": {
+                "title": "Intervencija Tips",
+                "createLabel": "Kreiraj novi Intervencija Tip",
+                "createOrEditLabel": "Kreirajte ili izmenite Intervencija Tip"
+            },
+            "created": "Kreiran je novi Intervencija Tip pod nazivom {{ param }}",
+            "updated": "Intervencija Tip pod nazivom {{ param }} je ažuriran",
+            "deleted": "Intervencija Tip pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Intervencija Tip pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Intervencija Tip"
+            },
+            "naziv": "Naziv"
+        }
+    }
+}

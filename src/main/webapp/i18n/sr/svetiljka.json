@@ -1,0 +1,24 @@
+
+{
+    "rasvetaApp": {
+        "svetiljka" : {
+            "home": {
+                "title": "Svetiljkas",
+                "createLabel": "Kreiraj novi Svetiljka",
+                "createOrEditLabel": "Kreirajte ili izmenite Svetiljka"
+            },
+            "created": "Kreiran je novi Svetiljka pod nazivom {{ param }}",
+            "updated": "Svetiljka pod nazivom {{ param }} je ažuriran",
+            "deleted": "Svetiljka pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Svetiljka pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Svetiljka"
+            },
+            "kom": "Kom",
+            "stub": "Stub",
+            "svetiljkaTip": "Svetiljka Tip"
+        }
+    }
+}

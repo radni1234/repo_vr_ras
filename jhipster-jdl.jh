@@ -1,0 +1,143 @@
+
+entity Opstina {
+	naziv String
+}
+
+entity Mesto {
+	naziv String
+}
+
+
+entity StubTip {
+	naziv String
+}
+
+entity Stub {
+	adresa String,
+	lonD Double,
+	latD Double,
+	rbr Integer,
+    adresaSlike String
+}
+
+entity SvetiljkaTip {
+	naziv String,
+    izvor String,
+    snaga Double
+}
+
+entity Svetiljka {
+    kom Integer
+}
+
+entity JedMere {
+	naziv String
+}
+
+entity IntervencijaTip {
+	naziv String
+}
+
+entity MaterijalTip {
+	naziv String
+}
+
+entity Status {
+	naziv String,
+    redosled Integer
+}
+
+entity UgovorMaterijal {
+	opis String,
+    datumOd LocalDate,
+    datumDo LocalDate
+}
+
+entity UgovorMaterijalStav {
+	naziv String,
+	cena Double
+}
+
+entity UgovorIntervencija {
+	opis String,
+    datumOd LocalDate,
+    datumDo LocalDate
+}
+
+entity UgovorIntervencijaStav {
+	naziv String,
+	cena Double
+}
+
+entity Prijava {
+	opis String,
+    prijavio String
+    telefon String,
+    email String,
+    datum Instant
+}
+
+entity PrijavaStatus {
+	opis String,
+    datum Instant,
+    trajanje Long
+}
+
+entity PrijavaIntervencija {
+	opis String,
+    datum Instant
+}
+
+entity PrijavaMaterijal {
+	kolicina Integer,
+	opis String,
+    datum Instant
+}
+
+relationship ManyToOne {
+	Mesto{opstina} to Opstina,
+    Stub{mesto} to Mesto,
+    Stub{stubTip} to StubTip,
+    Stub{status} to Status,
+    Svetiljka{stub} to Stub,
+    Svetiljka{svetiljkaTip} to SvetiljkaTip,
+    UgovorMaterijal{opstina} to Opstina,
+    UgovorIntervencija{opstina} to Opstina,
+    UgovorMaterijalStav{ugovorMaterijal} to UgovorMaterijal,
+    UgovorMaterijalStav{jedMere} to JedMere,
+    UgovorIntervencijaStav{ugovorIntervencija} to UgovorIntervencija,
+    UgovorIntervencijaStav{jedMere} to JedMere,
+    Prijava{stub} to Stub,
+    PrijavaStatus{prijava} to Prijava,
+    PrijavaStatus{status} to Status,
+    PrijavaIntervencija{intervencijaTip} to IntervencijaTip,
+    PrijavaIntervencija{prijavaStatus} to PrijavaStatus,
+    PrijavaMaterijal{materijalTip} to MaterijalTip,
+    PrijavaMaterijal{prijavaIntervencija} to PrijavaIntervencija
+}
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+paginate Opstina, 
+Mesto, 
+StubTip, 
+Stub, 
+SvetiljkaTip, 
+Svetiljka, 
+JedMere, 
+IntervencijaTip, 
+MaterijalTip,
+Status,
+UgovorMaterijal,
+UgovorMaterijalStav,
+UgovorIntervencija,
+UgovorIntervencijaStav,
+Prijava,
+PrijavaStatus,
+PrijavaIntervencija,
+PrijavaMaterijal
+with pagination
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

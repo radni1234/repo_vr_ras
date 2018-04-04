@@ -1,0 +1,56 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPrijavaMaterijalLabel" jhiTranslate="rasvetaApp.prijavaMaterijal.home.createOrEditLabel">Create or edit a Prijava Materijal</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!prijavaMaterijal.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="prijavaMaterijal.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaMaterijal.kolicina" for="field_kolicina">Kolicina</label>
+            <input type="number" class="form-control" name="kolicina" id="field_kolicina"
+                [(ngModel)]="prijavaMaterijal.kolicina" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaMaterijal.opis" for="field_opis">Opis</label>
+            <input type="text" class="form-control" name="opis" id="field_opis"
+                [(ngModel)]="prijavaMaterijal.opis" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaMaterijal.datum" for="field_datum">Datum</label>
+            <div class="d-flex">
+                <input id="field_datum" type="datetime-local" class="form-control" name="datum" [(ngModel)]="prijavaMaterijal.datum"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaMaterijal.materijalTip" for="field_materijalTip">Materijal Tip</label>
+            <select class="form-control" id="field_materijalTip" name="materijalTip" [(ngModel)]="prijavaMaterijal.materijalTip" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="materijalTipOption.id === prijavaMaterijal.materijalTip?.id ? prijavaMaterijal.materijalTip : materijalTipOption" *ngFor="let materijalTipOption of materijaltips; trackBy: trackMaterijalTipById">{{materijalTipOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaMaterijal.prijavaIntervencija" for="field_prijavaIntervencija">Prijava Intervencija</label>
+            <select class="form-control" id="field_prijavaIntervencija" name="prijavaIntervencija" [(ngModel)]="prijavaMaterijal.prijavaIntervencija" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prijavaIntervencijaOption.id === prijavaMaterijal.prijavaIntervencija?.id ? prijavaMaterijal.prijavaIntervencija : prijavaIntervencijaOption" *ngFor="let prijavaIntervencijaOption of prijavaintervencijas; trackBy: trackPrijavaIntervencijaById">{{prijavaIntervencijaOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

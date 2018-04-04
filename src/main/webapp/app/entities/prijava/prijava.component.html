@@ -1,0 +1,80 @@
+<div>
+    <h2>
+        <span jhiTranslate="rasvetaApp.prijava.home.title">Prijavas</span>
+        <button class="btn btn-primary float-right jh-create-entity create-prijava" [routerLink]="['/', { outlets: { popup: ['prijava-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="rasvetaApp.prijava.home.createLabel">
+            Create new Prijava
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="prijavas">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="opis"><span jhiTranslate="rasvetaApp.prijava.opis">Opis</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="prijavio"><span jhiTranslate="rasvetaApp.prijava.prijavio">Prijavio</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="telefon"><span jhiTranslate="rasvetaApp.prijava.telefon">Telefon</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="email"><span jhiTranslate="rasvetaApp.prijava.email">Email</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="datum"><span jhiTranslate="rasvetaApp.prijava.datum">Datum</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stub.id"><span jhiTranslate="rasvetaApp.prijava.stub">Stub</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let prijava of prijavas ;trackBy: trackId">
+                <td><a [routerLink]="['../prijava', prijava.id ]">{{prijava.id}}</a></td>
+                <td>{{prijava.opis}}</td>
+                <td>{{prijava.prijavio}}</td>
+                <td>{{prijava.telefon}}</td>
+                <td>{{prijava.email}}</td>
+                <td>{{prijava.datum | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="prijava.stub">
+                        <a [routerLink]="['../stub', prijava.stub?.id ]" >{{prijava.stub?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../prijava', prijava.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'prijava/'+ prijava.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'prijava/'+ prijava.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="prijavas && prijavas.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

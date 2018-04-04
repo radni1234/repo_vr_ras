@@ -1,0 +1,22 @@
+
+{
+    "rasvetaApp": {
+        "jedMere" : {
+            "home": {
+                "title": "Jed Meres",
+                "createLabel": "Kreiraj novi Jed Mere",
+                "createOrEditLabel": "Kreirajte ili izmenite Jed Mere"
+            },
+            "created": "Kreiran je novi Jed Mere pod nazivom {{ param }}",
+            "updated": "Jed Mere pod nazivom {{ param }} je ažuriran",
+            "deleted": "Jed Mere pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Jed Mere pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Jed Mere"
+            },
+            "naziv": "Naziv"
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myStubLabel" jhiTranslate="rasvetaApp.stub.home.createOrEditLabel">Create or edit a Stub</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!stub.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="stub.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.stub.adresa" for="field_adresa">Adresa</label>
+            <input type="text" class="form-control" name="adresa" id="field_adresa"
+                [(ngModel)]="stub.adresa" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.stub.lonD" for="field_lonD">Lon D</label>
+            <input type="number" class="form-control" name="lonD" id="field_lonD"
+                [(ngModel)]="stub.lonD" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.stub.latD" for="field_latD">Lat D</label>
+            <input type="number" class="form-control" name="latD" id="field_latD"
+                [(ngModel)]="stub.latD" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.stub.rbr" for="field_rbr">Rbr</label>
+            <input type="number" class="form-control" name="rbr" id="field_rbr"
+                [(ngModel)]="stub.rbr" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.stub.adresaSlike" for="field_adresaSlike">Adresa Slike</label>
+            <input type="text" class="form-control" name="adresaSlike" id="field_adresaSlike"
+                [(ngModel)]="stub.adresaSlike" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.stub.mesto" for="field_mesto">Mesto</label>
+            <select class="form-control" id="field_mesto" name="mesto" [(ngModel)]="stub.mesto" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="mestoOption.id === stub.mesto?.id ? stub.mesto : mestoOption" *ngFor="let mestoOption of mestos; trackBy: trackMestoById">{{mestoOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.stub.stubTip" for="field_stubTip">Stub Tip</label>
+            <select class="form-control" id="field_stubTip" name="stubTip" [(ngModel)]="stub.stubTip" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="stubTipOption.id === stub.stubTip?.id ? stub.stubTip : stubTipOption" *ngFor="let stubTipOption of stubtips; trackBy: trackStubTipById">{{stubTipOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.stub.status" for="field_status">Status</label>
+            <select class="form-control" id="field_status" name="status" [(ngModel)]="stub.status" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="statusOption.id === stub.status?.id ? stub.status : statusOption" *ngFor="let statusOption of statuses; trackBy: trackStatusById">{{statusOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

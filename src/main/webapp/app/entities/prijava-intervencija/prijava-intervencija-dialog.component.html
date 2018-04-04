@@ -1,0 +1,51 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPrijavaIntervencijaLabel" jhiTranslate="rasvetaApp.prijavaIntervencija.home.createOrEditLabel">Create or edit a Prijava Intervencija</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!prijavaIntervencija.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="prijavaIntervencija.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaIntervencija.opis" for="field_opis">Opis</label>
+            <input type="text" class="form-control" name="opis" id="field_opis"
+                [(ngModel)]="prijavaIntervencija.opis" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaIntervencija.datum" for="field_datum">Datum</label>
+            <div class="d-flex">
+                <input id="field_datum" type="datetime-local" class="form-control" name="datum" [(ngModel)]="prijavaIntervencija.datum"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaIntervencija.intervencijaTip" for="field_intervencijaTip">Intervencija Tip</label>
+            <select class="form-control" id="field_intervencijaTip" name="intervencijaTip" [(ngModel)]="prijavaIntervencija.intervencijaTip" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="intervencijaTipOption.id === prijavaIntervencija.intervencijaTip?.id ? prijavaIntervencija.intervencijaTip : intervencijaTipOption" *ngFor="let intervencijaTipOption of intervencijatips; trackBy: trackIntervencijaTipById">{{intervencijaTipOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaIntervencija.prijavaStatus" for="field_prijavaStatus">Prijava Status</label>
+            <select class="form-control" id="field_prijavaStatus" name="prijavaStatus" [(ngModel)]="prijavaIntervencija.prijavaStatus" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prijavaStatusOption.id === prijavaIntervencija.prijavaStatus?.id ? prijavaIntervencija.prijavaStatus : prijavaStatusOption" *ngFor="let prijavaStatusOption of prijavastatuses; trackBy: trackPrijavaStatusById">{{prijavaStatusOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

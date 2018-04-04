@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "redosled",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180402105557",
+    "entityTableName": "status",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

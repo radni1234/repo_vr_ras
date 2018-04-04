@@ -1,0 +1,46 @@
+
+<div *ngIf="prijavaStatus">
+    <h2><span jhiTranslate="rasvetaApp.prijavaStatus.detail.title">Prijava Status</span> {{prijavaStatus.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rasvetaApp.prijavaStatus.opis">Opis</span></dt>
+        <dd>
+            <span>{{prijavaStatus.opis}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.prijavaStatus.datum">Datum</span></dt>
+        <dd>
+            <span>{{prijavaStatus.datum | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.prijavaStatus.trajanje">Trajanje</span></dt>
+        <dd>
+            <span>{{prijavaStatus.trajanje}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.prijavaStatus.prijava">Prijava</span></dt>
+        <dd>
+            <div *ngIf="prijavaStatus.prijava">
+                <a [routerLink]="['/prijava', prijavaStatus.prijava?.id]">{{prijavaStatus.prijava?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.prijavaStatus.status">Status</span></dt>
+        <dd>
+            <div *ngIf="prijavaStatus.status">
+                <a [routerLink]="['/status', prijavaStatus.status?.id]">{{prijavaStatus.status?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'prijava-status/'+ prijavaStatus.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

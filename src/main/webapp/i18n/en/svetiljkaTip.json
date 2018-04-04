@@ -1,0 +1,24 @@
+
+{
+    "rasvetaApp": {
+        "svetiljkaTip" : {
+            "home": {
+                "title": "Svetiljka Tips",
+                "createLabel": "Create a new Svetiljka Tip",
+                "createOrEditLabel": "Create or edit a Svetiljka Tip"
+            },
+            "created": "A new Svetiljka Tip is created with identifier {{ param }}",
+            "updated": "A Svetiljka Tip is updated with identifier {{ param }}",
+            "deleted": "A Svetiljka Tip is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Svetiljka Tip {{ id }}?"
+            },
+            "detail": {
+                "title": "Svetiljka Tip"
+            },
+            "naziv": "Naziv",
+            "izvor": "Izvor",
+            "snaga": "Snaga"
+        }
+    }
+}

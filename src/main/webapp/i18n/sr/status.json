@@ -1,0 +1,23 @@
+
+{
+    "rasvetaApp": {
+        "status" : {
+            "home": {
+                "title": "Statuses",
+                "createLabel": "Kreiraj novi Status",
+                "createOrEditLabel": "Kreirajte ili izmenite Status"
+            },
+            "created": "Kreiran je novi Status pod nazivom {{ param }}",
+            "updated": "Status pod nazivom {{ param }} je ažuriran",
+            "deleted": "Status pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Status pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Status"
+            },
+            "naziv": "Naziv",
+            "redosled": "Redosled"
+        }
+    }
+}

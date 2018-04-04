@@ -1,0 +1,16 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180402105550",
+    "entityTableName": "stub_tip",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

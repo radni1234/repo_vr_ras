@@ -1,0 +1,22 @@
+
+{
+    "rasvetaApp": {
+        "opstina" : {
+            "home": {
+                "title": "Opstinas",
+                "createLabel": "Create a new Opstina",
+                "createOrEditLabel": "Create or edit a Opstina"
+            },
+            "created": "A new Opstina is created with identifier {{ param }}",
+            "updated": "A Opstina is updated with identifier {{ param }}",
+            "deleted": "A Opstina is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Opstina {{ id }}?"
+            },
+            "detail": {
+                "title": "Opstina"
+            },
+            "naziv": "Naziv"
+        }
+    }
+}

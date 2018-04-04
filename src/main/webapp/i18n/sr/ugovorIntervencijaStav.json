@@ -1,0 +1,25 @@
+
+{
+    "rasvetaApp": {
+        "ugovorIntervencijaStav" : {
+            "home": {
+                "title": "Ugovor Intervencija Stavs",
+                "createLabel": "Kreiraj novi Ugovor Intervencija Stav",
+                "createOrEditLabel": "Kreirajte ili izmenite Ugovor Intervencija Stav"
+            },
+            "created": "Kreiran je novi Ugovor Intervencija Stav pod nazivom {{ param }}",
+            "updated": "Ugovor Intervencija Stav pod nazivom {{ param }} je ažuriran",
+            "deleted": "Ugovor Intervencija Stav pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Ugovor Intervencija Stav pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Ugovor Intervencija Stav"
+            },
+            "naziv": "Naziv",
+            "cena": "Cena",
+            "ugovorIntervencija": "Ugovor Intervencija",
+            "jedMere": "Jed Mere"
+        }
+    }
+}

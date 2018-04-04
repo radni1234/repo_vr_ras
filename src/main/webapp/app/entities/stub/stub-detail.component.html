@@ -1,0 +1,60 @@
+
+<div *ngIf="stub">
+    <h2><span jhiTranslate="rasvetaApp.stub.detail.title">Stub</span> {{stub.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rasvetaApp.stub.adresa">Adresa</span></dt>
+        <dd>
+            <span>{{stub.adresa}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.stub.lonD">Lon D</span></dt>
+        <dd>
+            <span>{{stub.lonD}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.stub.latD">Lat D</span></dt>
+        <dd>
+            <span>{{stub.latD}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.stub.rbr">Rbr</span></dt>
+        <dd>
+            <span>{{stub.rbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.stub.adresaSlike">Adresa Slike</span></dt>
+        <dd>
+            <span>{{stub.adresaSlike}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.stub.mesto">Mesto</span></dt>
+        <dd>
+            <div *ngIf="stub.mesto">
+                <a [routerLink]="['/mesto', stub.mesto?.id]">{{stub.mesto?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.stub.stubTip">Stub Tip</span></dt>
+        <dd>
+            <div *ngIf="stub.stubTip">
+                <a [routerLink]="['/stub-tip', stub.stubTip?.id]">{{stub.stubTip?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.stub.status">Status</span></dt>
+        <dd>
+            <div *ngIf="stub.status">
+                <a [routerLink]="['/status', stub.status?.id]">{{stub.status?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'stub/'+ stub.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

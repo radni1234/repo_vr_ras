@@ -1,0 +1,25 @@
+
+{
+    "rasvetaApp": {
+        "ugovorIntervencija" : {
+            "home": {
+                "title": "Ugovor Intervencijas",
+                "createLabel": "Create a new Ugovor Intervencija",
+                "createOrEditLabel": "Create or edit a Ugovor Intervencija"
+            },
+            "created": "A new Ugovor Intervencija is created with identifier {{ param }}",
+            "updated": "A Ugovor Intervencija is updated with identifier {{ param }}",
+            "deleted": "A Ugovor Intervencija is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ugovor Intervencija {{ id }}?"
+            },
+            "detail": {
+                "title": "Ugovor Intervencija"
+            },
+            "opis": "Opis",
+            "datumOd": "Datum Od",
+            "datumDo": "Datum Do",
+            "opstina": "Opstina"
+        }
+    }
+}

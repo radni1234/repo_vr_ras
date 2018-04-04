@@ -1,0 +1,29 @@
+
+{
+    "rasvetaApp": {
+        "stub" : {
+            "home": {
+                "title": "Stubs",
+                "createLabel": "Kreiraj novi Stub",
+                "createOrEditLabel": "Kreirajte ili izmenite Stub"
+            },
+            "created": "Kreiran je novi Stub pod nazivom {{ param }}",
+            "updated": "Stub pod nazivom {{ param }} je ažuriran",
+            "deleted": "Stub pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Stub pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Stub"
+            },
+            "adresa": "Adresa",
+            "lonD": "Lon D",
+            "latD": "Lat D",
+            "rbr": "Rbr",
+            "adresaSlike": "Adresa Slike",
+            "mesto": "Mesto",
+            "stubTip": "Stub Tip",
+            "status": "Status"
+        }
+    }
+}

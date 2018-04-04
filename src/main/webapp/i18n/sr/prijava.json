@@ -1,0 +1,27 @@
+
+{
+    "rasvetaApp": {
+        "prijava" : {
+            "home": {
+                "title": "Prijavas",
+                "createLabel": "Kreiraj novi Prijava",
+                "createOrEditLabel": "Kreirajte ili izmenite Prijava"
+            },
+            "created": "Kreiran je novi Prijava pod nazivom {{ param }}",
+            "updated": "Prijava pod nazivom {{ param }} je ažuriran",
+            "deleted": "Prijava pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Prijava pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Prijava"
+            },
+            "opis": "Opis",
+            "prijavio": "Prijavio",
+            "telefon": "Telefon",
+            "email": "Email",
+            "datum": "Datum",
+            "stub": "Stub"
+        }
+    }
+}

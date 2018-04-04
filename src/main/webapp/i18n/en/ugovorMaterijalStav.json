@@ -1,0 +1,25 @@
+
+{
+    "rasvetaApp": {
+        "ugovorMaterijalStav" : {
+            "home": {
+                "title": "Ugovor Materijal Stavs",
+                "createLabel": "Create a new Ugovor Materijal Stav",
+                "createOrEditLabel": "Create or edit a Ugovor Materijal Stav"
+            },
+            "created": "A new Ugovor Materijal Stav is created with identifier {{ param }}",
+            "updated": "A Ugovor Materijal Stav is updated with identifier {{ param }}",
+            "deleted": "A Ugovor Materijal Stav is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ugovor Materijal Stav {{ id }}?"
+            },
+            "detail": {
+                "title": "Ugovor Materijal Stav"
+            },
+            "naziv": "Naziv",
+            "cena": "Cena",
+            "ugovorMaterijal": "Ugovor Materijal",
+            "jedMere": "Jed Mere"
+        }
+    }
+}

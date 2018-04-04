@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "mesto",
+            "otherEntityName": "mesto",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stubTip",
+            "otherEntityName": "stubTip",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "status",
+            "otherEntityName": "status",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "adresa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lonD",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "latD",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "rbr",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "adresaSlike",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180402105551",
+    "entityTableName": "stub",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,26 @@
+
+{
+    "rasvetaApp": {
+        "prijavaMaterijal" : {
+            "home": {
+                "title": "Prijava Materijals",
+                "createLabel": "Kreiraj novi Prijava Materijal",
+                "createOrEditLabel": "Kreirajte ili izmenite Prijava Materijal"
+            },
+            "created": "Kreiran je novi Prijava Materijal pod nazivom {{ param }}",
+            "updated": "Prijava Materijal pod nazivom {{ param }} je ažuriran",
+            "deleted": "Prijava Materijal pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Prijava Materijal pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Prijava Materijal"
+            },
+            "kolicina": "Kolicina",
+            "opis": "Opis",
+            "datum": "Datum",
+            "materijalTip": "Materijal Tip",
+            "prijavaIntervencija": "Prijava Intervencija"
+        }
+    }
+}

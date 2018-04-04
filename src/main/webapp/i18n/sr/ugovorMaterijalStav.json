@@ -1,0 +1,25 @@
+
+{
+    "rasvetaApp": {
+        "ugovorMaterijalStav" : {
+            "home": {
+                "title": "Ugovor Materijal Stavs",
+                "createLabel": "Kreiraj novi Ugovor Materijal Stav",
+                "createOrEditLabel": "Kreirajte ili izmenite Ugovor Materijal Stav"
+            },
+            "created": "Kreiran je novi Ugovor Materijal Stav pod nazivom {{ param }}",
+            "updated": "Ugovor Materijal Stav pod nazivom {{ param }} je ažuriran",
+            "deleted": "Ugovor Materijal Stav pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Ugovor Materijal Stav pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Ugovor Materijal Stav"
+            },
+            "naziv": "Naziv",
+            "cena": "Cena",
+            "ugovorMaterijal": "Ugovor Materijal",
+            "jedMere": "Jed Mere"
+        }
+    }
+}

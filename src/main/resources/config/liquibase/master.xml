@@ -5,6 +5,35 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105548_added_entity_Opstina.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105549_added_entity_Mesto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105550_added_entity_StubTip.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105551_added_entity_Stub.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105552_added_entity_SvetiljkaTip.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105553_added_entity_Svetiljka.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105554_added_entity_JedMere.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105555_added_entity_IntervencijaTip.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105556_added_entity_MaterijalTip.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105557_added_entity_Status.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105558_added_entity_UgovorMaterijal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105559_added_entity_UgovorMaterijalStav.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105600_added_entity_UgovorIntervencija.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105601_added_entity_UgovorIntervencijaStav.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105602_added_entity_Prijava.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105603_added_entity_PrijavaStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105604_added_entity_PrijavaIntervencija.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105605_added_entity_PrijavaMaterijal.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180402105549_added_entity_constraints_Mesto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105551_added_entity_constraints_Stub.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105553_added_entity_constraints_Svetiljka.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105558_added_entity_constraints_UgovorMaterijal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105559_added_entity_constraints_UgovorMaterijalStav.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105600_added_entity_constraints_UgovorIntervencija.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105601_added_entity_constraints_UgovorIntervencijaStav.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105602_added_entity_constraints_Prijava.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105603_added_entity_constraints_PrijavaStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105604_added_entity_constraints_PrijavaIntervencija.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180402105605_added_entity_constraints_PrijavaMaterijal.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

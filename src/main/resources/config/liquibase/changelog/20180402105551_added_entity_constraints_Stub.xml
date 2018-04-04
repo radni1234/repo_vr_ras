@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Stub.
+    -->
+    <changeSet id="20180402105551-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="mesto_id"
+                                 baseTableName="stub"
+                                 constraintName="fk_stub_mesto_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mesto"/>
+
+        <addForeignKeyConstraint baseColumnNames="stub_tip_id"
+                                 baseTableName="stub"
+                                 constraintName="fk_stub_stub_tip_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stub_tip"/>
+
+        <addForeignKeyConstraint baseColumnNames="status_id"
+                                 baseTableName="stub"
+                                 constraintName="fk_stub_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="status"/>
+
+    </changeSet>
+</databaseChangeLog>

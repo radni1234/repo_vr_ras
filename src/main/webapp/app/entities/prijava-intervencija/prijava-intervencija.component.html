@@ -1,0 +1,80 @@
+<div>
+    <h2>
+        <span jhiTranslate="rasvetaApp.prijavaIntervencija.home.title">Prijava Intervencijas</span>
+        <button class="btn btn-primary float-right jh-create-entity create-prijava-intervencija" [routerLink]="['/', { outlets: { popup: ['prijava-intervencija-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="rasvetaApp.prijavaIntervencija.home.createLabel">
+            Create new Prijava Intervencija
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="prijavaIntervencijas">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="opis"><span jhiTranslate="rasvetaApp.prijavaIntervencija.opis">Opis</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="datum"><span jhiTranslate="rasvetaApp.prijavaIntervencija.datum">Datum</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="intervencijaTip.id"><span jhiTranslate="rasvetaApp.prijavaIntervencija.intervencijaTip">Intervencija Tip</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="prijavaStatus.id"><span jhiTranslate="rasvetaApp.prijavaIntervencija.prijavaStatus">Prijava Status</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let prijavaIntervencija of prijavaIntervencijas ;trackBy: trackId">
+                <td><a [routerLink]="['../prijava-intervencija', prijavaIntervencija.id ]">{{prijavaIntervencija.id}}</a></td>
+                <td>{{prijavaIntervencija.opis}}</td>
+                <td>{{prijavaIntervencija.datum | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="prijavaIntervencija.intervencijaTip">
+                        <a [routerLink]="['../intervencija-tip', prijavaIntervencija.intervencijaTip?.id ]" >{{prijavaIntervencija.intervencijaTip?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="prijavaIntervencija.prijavaStatus">
+                        <a [routerLink]="['../prijava-status', prijavaIntervencija.prijavaStatus?.id ]" >{{prijavaIntervencija.prijavaStatus?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../prijava-intervencija', prijavaIntervencija.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'prijava-intervencija/'+ prijavaIntervencija.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'prijava-intervencija/'+ prijavaIntervencija.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="prijavaIntervencijas && prijavaIntervencijas.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

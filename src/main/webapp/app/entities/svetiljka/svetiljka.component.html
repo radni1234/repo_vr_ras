@@ -1,0 +1,78 @@
+<div>
+    <h2>
+        <span jhiTranslate="rasvetaApp.svetiljka.home.title">Svetiljkas</span>
+        <button class="btn btn-primary float-right jh-create-entity create-svetiljka" [routerLink]="['/', { outlets: { popup: ['svetiljka-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="rasvetaApp.svetiljka.home.createLabel">
+            Create new Svetiljka
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="svetiljkas">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="kom"><span jhiTranslate="rasvetaApp.svetiljka.kom">Kom</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stub.id"><span jhiTranslate="rasvetaApp.svetiljka.stub">Stub</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="svetiljkaTip.id"><span jhiTranslate="rasvetaApp.svetiljka.svetiljkaTip">Svetiljka Tip</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let svetiljka of svetiljkas ;trackBy: trackId">
+                <td><a [routerLink]="['../svetiljka', svetiljka.id ]">{{svetiljka.id}}</a></td>
+                <td>{{svetiljka.kom}}</td>
+                <td>
+                    <div *ngIf="svetiljka.stub">
+                        <a [routerLink]="['../stub', svetiljka.stub?.id ]" >{{svetiljka.stub?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="svetiljka.svetiljkaTip">
+                        <a [routerLink]="['../svetiljka-tip', svetiljka.svetiljkaTip?.id ]" >{{svetiljka.svetiljkaTip?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../svetiljka', svetiljka.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'svetiljka/'+ svetiljka.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'svetiljka/'+ svetiljka.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="svetiljkas && svetiljkas.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity UgovorIntervencijaStav.
+    -->
+    <changeSet id="20180402105601-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="ugovor_intervencija_id"
+                                 baseTableName="ugovor_intervencija_stav"
+                                 constraintName="fk_ugovor_intervencija_stav_ugovor_intervencija_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ugovor_intervencija"/>
+
+        <addForeignKeyConstraint baseColumnNames="jed_mere_id"
+                                 baseTableName="ugovor_intervencija_stav"
+                                 constraintName="fk_ugovor_intervencija_stav_jed_mere_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jed_mere"/>
+
+    </changeSet>
+</databaseChangeLog>

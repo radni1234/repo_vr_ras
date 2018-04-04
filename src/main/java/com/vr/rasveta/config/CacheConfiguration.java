@@ -45,6 +45,24 @@ public class CacheConfiguration {
             cm.createCache(com.vr.rasveta.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.vr.rasveta.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.vr.rasveta.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.Opstina.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.Mesto.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.StubTip.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.Stub.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.SvetiljkaTip.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.Svetiljka.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.JedMere.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.IntervencijaTip.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.MaterijalTip.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.Status.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.UgovorMaterijal.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.UgovorMaterijalStav.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.UgovorIntervencija.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.UgovorIntervencijaStav.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.Prijava.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.PrijavaStatus.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.PrijavaIntervencija.class.getName(), jcacheConfiguration);
+            cm.createCache(com.vr.rasveta.domain.PrijavaMaterijal.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

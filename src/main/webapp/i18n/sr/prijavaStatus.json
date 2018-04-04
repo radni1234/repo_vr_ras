@@ -1,0 +1,26 @@
+
+{
+    "rasvetaApp": {
+        "prijavaStatus" : {
+            "home": {
+                "title": "Prijava Statuses",
+                "createLabel": "Kreiraj novi Prijava Status",
+                "createOrEditLabel": "Kreirajte ili izmenite Prijava Status"
+            },
+            "created": "Kreiran je novi Prijava Status pod nazivom {{ param }}",
+            "updated": "Prijava Status pod nazivom {{ param }} je ažuriran",
+            "deleted": "Prijava Status pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Prijava Status pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Prijava Status"
+            },
+            "opis": "Opis",
+            "datum": "Datum",
+            "trajanje": "Trajanje",
+            "prijava": "Prijava",
+            "status": "Status"
+        }
+    }
+}

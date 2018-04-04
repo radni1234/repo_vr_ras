@@ -2,13 +2,20 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { RasvetaSharedModule } from '../shared';
+import { AgmCoreModule } from '@agm/core';
 
 import { HOME_ROUTE, HomeComponent } from './';
 
 @NgModule({
     imports: [
         RasvetaSharedModule,
-        RouterModule.forChild([ HOME_ROUTE ])
+        RouterModule.forChild([ HOME_ROUTE ]),
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyBFai77JKJpWYUJCMug80K5KYw49dk2RYc'
+        }),
+        AgmCoreModule.forRoot({
+            libraries: ['places']
+        }),
     ],
     declarations: [
         HomeComponent,

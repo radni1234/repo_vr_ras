@@ -1,0 +1,25 @@
+
+{
+    "rasvetaApp": {
+        "ugovorMaterijal" : {
+            "home": {
+                "title": "Ugovor Materijals",
+                "createLabel": "Kreiraj novi Ugovor Materijal",
+                "createOrEditLabel": "Kreirajte ili izmenite Ugovor Materijal"
+            },
+            "created": "Kreiran je novi Ugovor Materijal pod nazivom {{ param }}",
+            "updated": "Ugovor Materijal pod nazivom {{ param }} je ažuriran",
+            "deleted": "Ugovor Materijal pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Ugovor Materijal pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Ugovor Materijal"
+            },
+            "opis": "Opis",
+            "datumOd": "Datum Od",
+            "datumDo": "Datum Do",
+            "opstina": "Opstina"
+        }
+    }
+}

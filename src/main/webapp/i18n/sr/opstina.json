@@ -1,0 +1,22 @@
+
+{
+    "rasvetaApp": {
+        "opstina" : {
+            "home": {
+                "title": "Opstinas",
+                "createLabel": "Kreiraj novi Opstina",
+                "createOrEditLabel": "Kreirajte ili izmenite Opstina"
+            },
+            "created": "Kreiran je novi Opstina pod nazivom {{ param }}",
+            "updated": "Opstina pod nazivom {{ param }} je ažuriran",
+            "deleted": "Opstina pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Opstina pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Opstina"
+            },
+            "naziv": "Naziv"
+        }
+    }
+}

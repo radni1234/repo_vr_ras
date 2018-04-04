@@ -1,0 +1,42 @@
+
+<div *ngIf="ugovorIntervencijaStav">
+    <h2><span jhiTranslate="rasvetaApp.ugovorIntervencijaStav.detail.title">Ugovor Intervencija Stav</span> {{ugovorIntervencijaStav.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rasvetaApp.ugovorIntervencijaStav.naziv">Naziv</span></dt>
+        <dd>
+            <span>{{ugovorIntervencijaStav.naziv}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.ugovorIntervencijaStav.cena">Cena</span></dt>
+        <dd>
+            <span>{{ugovorIntervencijaStav.cena}}</span>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.ugovorIntervencijaStav.ugovorIntervencija">Ugovor Intervencija</span></dt>
+        <dd>
+            <div *ngIf="ugovorIntervencijaStav.ugovorIntervencija">
+                <a [routerLink]="['/ugovor-intervencija', ugovorIntervencijaStav.ugovorIntervencija?.id]">{{ugovorIntervencijaStav.ugovorIntervencija?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rasvetaApp.ugovorIntervencijaStav.jedMere">Jed Mere</span></dt>
+        <dd>
+            <div *ngIf="ugovorIntervencijaStav.jedMere">
+                <a [routerLink]="['/jed-mere', ugovorIntervencijaStav.jedMere?.id]">{{ugovorIntervencijaStav.jedMere?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'ugovor-intervencija-stav/'+ ugovorIntervencijaStav.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

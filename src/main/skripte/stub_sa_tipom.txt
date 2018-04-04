@@ -1,0 +1,6 @@
+select s.id, s.adresa, s.lon_d, s.lat_d, s.rbr, s.adresa_slike, t.mesto_id, stub_tip_id, 1 status_id
+from stub s, trafo t
+where s.trafo_id = t.id
+      and t.mesto_id in (select id from mesto where opstina_id = 1)
+      and s.STUB_TIP_ID is not null
+      ;

@@ -1,0 +1,56 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPrijavaStatusLabel" jhiTranslate="rasvetaApp.prijavaStatus.home.createOrEditLabel">Create or edit a Prijava Status</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!prijavaStatus.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="prijavaStatus.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaStatus.opis" for="field_opis">Opis</label>
+            <input type="text" class="form-control" name="opis" id="field_opis"
+                [(ngModel)]="prijavaStatus.opis" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaStatus.datum" for="field_datum">Datum</label>
+            <div class="d-flex">
+                <input id="field_datum" type="datetime-local" class="form-control" name="datum" [(ngModel)]="prijavaStatus.datum"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaStatus.trajanje" for="field_trajanje">Trajanje</label>
+            <input type="number" class="form-control" name="trajanje" id="field_trajanje"
+                [(ngModel)]="prijavaStatus.trajanje" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaStatus.prijava" for="field_prijava">Prijava</label>
+            <select class="form-control" id="field_prijava" name="prijava" [(ngModel)]="prijavaStatus.prijava" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prijavaOption.id === prijavaStatus.prijava?.id ? prijavaStatus.prijava : prijavaOption" *ngFor="let prijavaOption of prijavas; trackBy: trackPrijavaById">{{prijavaOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijavaStatus.status" for="field_status">Status</label>
+            <select class="form-control" id="field_status" name="status" [(ngModel)]="prijavaStatus.status" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="statusOption.id === prijavaStatus.status?.id ? prijavaStatus.status : statusOption" *ngFor="let statusOption of statuses; trackBy: trackStatusById">{{statusOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

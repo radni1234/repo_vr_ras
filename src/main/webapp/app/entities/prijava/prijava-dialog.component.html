@@ -1,0 +1,59 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPrijavaLabel" jhiTranslate="rasvetaApp.prijava.home.createOrEditLabel">Create or edit a Prijava</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!prijava.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="prijava.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijava.opis" for="field_opis">Opis</label>
+            <input type="text" class="form-control" name="opis" id="field_opis"
+                [(ngModel)]="prijava.opis" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijava.prijavio" for="field_prijavio">Prijavio</label>
+            <input type="text" class="form-control" name="prijavio" id="field_prijavio"
+                [(ngModel)]="prijava.prijavio" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijava.telefon" for="field_telefon">Telefon</label>
+            <input type="text" class="form-control" name="telefon" id="field_telefon"
+                [(ngModel)]="prijava.telefon" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijava.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                [(ngModel)]="prijava.email" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijava.datum" for="field_datum">Datum</label>
+            <div class="d-flex">
+                <input id="field_datum" type="datetime-local" class="form-control" name="datum" [(ngModel)]="prijava.datum"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rasvetaApp.prijava.stub" for="field_stub">Stub</label>
+            <select class="form-control" id="field_stub" name="stub" [(ngModel)]="prijava.stub" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="stubOption.id === prijava.stub?.id ? prijava.stub : stubOption" *ngFor="let stubOption of stubs; trackBy: trackStubById">{{stubOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
