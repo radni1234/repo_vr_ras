@@ -27,10 +27,15 @@ export class HomeComponent implements OnInit {
 
     // Zoom level
     zoom = 15;
+    zoomCurrent;
     // Start Position
 
     lat = 45.5702;
     lng = 19.6450;
+    lon_od = 0;
+    lon_do = 0;
+    lat_od = 0;
+    lat_do = 0;
 
     searchControl: FormControl;
 
@@ -53,10 +58,10 @@ export class HomeComponent implements OnInit {
         });
         this.registerAuthenticationSuccess();
 
-        this.stubService.query({size: 5000}).subscribe(
-            (res: HttpResponse<Stub[]>) => {console.log(res.body); this.stubs = res.body; },
-            (res: HttpErrorResponse) => console.log(res.message)
-        );
+        // this.stubService.query({size: 5000}).subscribe(
+        //     (res: HttpResponse<Stub[]>) => {console.log(res.body); this.stubs = res.body; },
+        //     (res: HttpErrorResponse) => console.log(res.message)
+        // );
 
         // create search FormControl
         this.searchControl = new FormControl();
@@ -74,6 +79,8 @@ export class HomeComponent implements OnInit {
                     // get the place result
                     const place: google.maps.places.PlaceResult = autocomplete.getPlace();
 
+                    console.log(place);
+
                     // verify result
                     if (place.geometry === undefined || place.geometry === null) {
                         return;
@@ -86,6 +93,38 @@ export class HomeComponent implements OnInit {
                 });
             });
         });
+    }
+
+    mapClicked($event:  any) {
+        console.log('Map Clicked');
+        console.log($event);
+    }
+
+    boundsChanged($event:  any) {
+        console.log('boundsChanged');
+        console.log($event);
+
+        if (this.zoomCurrent === 17
+            && (Math.abs(this.lon_od - $event.b.b) > 0.002
+                || Math.abs(this.lon_do - $event.b.f) > 0.002
+                || Math.abs(this.lat_od - $event.f.b) > 0.002
+                || Math.abs(this.lat_do - $event.f.f) > 0.002)) {
+            this.stubService.vratiStubove($event.b.b, $event.b.f, $event.f.b, $event.f.f).subscribe(
+                (res: Stub[]) => {console.log(res);
+                                        this.stubs = res;
+                                        this.lon_od = $event.b.b;
+                                        this.lon_do = $event.b.f;
+                                        this.lat_od = $event.f.b;
+                                        this.lat_do = $event.f.f;
+                }
+            );
+        }
+    }
+
+    zoomChanged($event:  any) {
+        console.log('zoomChanged');
+        console.log($event);
+        this.zoomCurrent = $event;
     }
 
     registerAuthenticationSuccess() {

@@ -111,6 +111,18 @@ public class StubResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(stub));
     }
 
+    @RequestMapping(value="/stubs", params = {"lon_od", "lon_do", "lat_od", "lat_do"}, method=RequestMethod.GET)
+    @Timed
+    public List<Stub> getStubOdDo(@RequestParam(value = "lon_od") Double lon_od,
+                                                    @RequestParam(value = "lon_do") Double lon_do,
+                                                    @RequestParam(value = "lat_od") Double lat_od,
+                                                    @RequestParam(value = "lat_do") Double lat_do) {
+        log.debug("REST request to get Stub - od do");
+        return stubRepository.findStubByLonLat(lon_od, lon_do, lat_od, lat_do);
+//        List<Stub> stub = stubRepository.findAll();
+//        return new ResponseEntity<>(stub.getContent(), headers, HttpStatus.OK);
+    }
+
     /**
      * DELETE  /stubs/:id : delete the "id" stub.
      *

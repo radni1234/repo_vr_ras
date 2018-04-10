@@ -39,6 +39,14 @@ export class StubService {
             .map((res: HttpResponse<Stub[]>) => this.convertArrayResponse(res));
     }
 
+    vratiStubove(lon_od, lon_do, lat_od, lat_do): Observable<Stub[]> {
+        // const options = createRequestOption(req);
+        console.log('vratiStubove');
+
+        return this.http.get<Stub[]>(this.resourceUrl + '?lon_od=' + lon_od + '&lon_do=' + lon_do + '&lat_od=' + lat_od + '&lat_do=' + lat_do)
+            .map((response) => response);
+    }
+
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response'});
     }
