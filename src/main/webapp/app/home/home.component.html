@@ -5,7 +5,12 @@
 
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" disableDefaultUI="true"
+<agm-map [latitude]="lat"
+         [longitude]="lng"
+         [zoom]="zoom"
+         [mapTypeId]="'hybrid'"
+         [mapTypeControl]="true"
+         (mapReady)="mapReady($event)"
          (mapClick)="mapClicked($event)"
          (boundsChange)="boundsChanged($event)"
          (zoomChange)="zoomChanged($event)">

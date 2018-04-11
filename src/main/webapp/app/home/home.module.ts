@@ -11,11 +11,8 @@ import { HOME_ROUTE, HomeComponent } from './';
         RasvetaSharedModule,
         RouterModule.forChild([ HOME_ROUTE ]),
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyBFai77JKJpWYUJCMug80K5KYw49dk2RYc'
-        }),
-        AgmCoreModule.forRoot({
-            libraries: ['places']
-        }),
+            apiKey: 'AIzaSyBFai77JKJpWYUJCMug80K5KYw49dk2RYc', libraries: ['places'], language: 'sh'
+        })
     ],
     declarations: [
         HomeComponent,

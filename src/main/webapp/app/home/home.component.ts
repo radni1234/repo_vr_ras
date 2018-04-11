@@ -87,12 +87,19 @@ export class HomeComponent implements OnInit {
                     }
 
                     // set latitude, longitude and zoom
+
+                    this.zoom = 17;
+
                     this.lat = place.geometry.location.lat();
                     this.lng = place.geometry.location.lng();
-                    this.zoom = 15;
+
                 });
             });
         });
+    }
+
+    mapReady(e) {
+        console.log('map instance', e);
     }
 
     mapClicked($event:  any) {
@@ -104,7 +111,7 @@ export class HomeComponent implements OnInit {
         console.log('boundsChanged');
         console.log($event);
 
-        if (this.zoomCurrent === 17
+        if (this.zoomCurrent >= 17
             && (Math.abs(this.lon_od - $event.b.b) > 0.002
                 || Math.abs(this.lon_do - $event.b.f) > 0.002
                 || Math.abs(this.lat_od - $event.f.b) > 0.002
@@ -118,6 +125,10 @@ export class HomeComponent implements OnInit {
                                         this.lat_do = $event.f.f;
                 }
             );
+        }
+
+        if (this.zoomCurrent < 17) {
+            this.stubs = [];
         }
     }
 
